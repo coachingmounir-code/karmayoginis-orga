@@ -128,7 +128,7 @@ function showSuccess(data) {
   const summaryBox = document.getElementById("summaryPreviewBox");
 
   const areaNames = (data.workAreas || []).map(a => AREA_LABELS[a] || a).join(", ");
-  const modelText = data.karmaModel === "6h" ? "6-Stunden Karma Yoga (Vollzeit Seva & Kost/Logis)" : "3-Stunden Karma Yoga (Freiraum für Praxis & Seminare)";
+  const modelText = data.karmaModel === "6h" ? "6 Stunden täglich (100% Seva • Kost & Logis frei)" : "50% (3 Stunden täglich • Freiraum für Praxis & Seminare)";
 
   summaryBox.innerHTML = `
     <h4 style="color: var(--yv-saffron-deep); font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--yv-border); padding-bottom: 0.4rem;">
@@ -183,13 +183,13 @@ function showSuccess(data) {
 
 function sendViaEmail() {
   const data = getFormData();
-  const subject = encodeURIComponent(`Karma Yoga Anmeldung: ${data.fullName} (${data.karmaModel === "6h" ? "6h Modell" : "3h Modell"})`);
+  const subject = encodeURIComponent(`Karma Yoga Anmeldung: ${data.fullName} (${data.karmaModel === "6h" ? "6 Std. 100%" : "3 Std. 50%"})`);
   const body = encodeURIComponent(
     `Om Namo Narayanaya liebe Seminarhaus-Leitung,\n\n` +
     `ich möchte mich gerne für Karma Yoga im Seminarhaus anmelden:\n\n` +
     `• Name: ${data.fullName} ${data.spiritualName ? `(${data.spiritualName})` : ""}\n` +
     `• Zeitraum: ${formatDate(data.arrivalDate)} bis ${formatDate(data.departureDate)}\n` +
-    `• Zeitmodell: ${data.karmaModel === "6h" ? "6-Stunden Modell (Vollzeit Seva)" : "3-Stunden Modell"}\n` +
+    `• Gewähltes Modell: ${data.karmaModel === "6h" ? "6 Stunden täglich (100% Seva • Kost & Logis frei)" : "50% (3 Stunden täglich • Freiraum für Praxis)"}\n` +
     `• E-Mail: ${data.email}\n` +
     `• Telefon: ${data.phone}\n` +
     `• Einsatzbereiche: ${(data.workAreas || []).map(a => AREA_LABELS[a] || a).join(", ")}\n` +
@@ -290,7 +290,7 @@ function validateStep(step) {
     }
   }
   
-  if (valid && step === 3) {
+  if (valid && step === 4) {
     const arr = document.getElementById("arrivalDate").value;
     const dep = document.getElementById("departureDate").value;
     if (arr && dep && new Date(dep) <= new Date(arr)) {
@@ -350,12 +350,3 @@ window.startNewForm = function() {
   currentStep = 1;
   updateWizardUI();
 };
-
-// Auto-advance on radio button change (Step 4)
-document.querySelectorAll('input[name="karmaModel"]').forEach(radio => {
-  radio.addEventListener('change', () => {
-    if (currentStep === 4) {
-      setTimeout(nextStep, 300); // short delay to show selection
-    }
-  });
-});

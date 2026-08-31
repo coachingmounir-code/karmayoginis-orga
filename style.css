@@ -431,26 +431,31 @@ body {
 }
 
 .choice-features {
-  padding-top: 0.75rem;
+  padding-top: 0.85rem;
+  margin-top: auto;
   border-top: 1px dashed rgba(230, 126, 34, 0.25);
-  font-size: 0.83rem;
+  font-size: 0.86rem;
   color: var(--yv-earth);
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
 }
 
 .choice-features li {
   list-style: none;
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.35;
 }
 
 .choice-features li::before {
   content: "✓";
   color: var(--yv-forest-green);
   font-weight: bold;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* Skills Grid */
