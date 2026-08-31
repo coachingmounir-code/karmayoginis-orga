@@ -388,7 +388,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.choice-badge-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
 .choice-icon {
@@ -409,6 +415,46 @@ body {
 .choice-card input:checked + .choice-card-inner .choice-status-pill {
   background: var(--yv-saffron);
   color: white;
+}
+
+/* Checkmark indicator in top right */
+.choice-check-indicator {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--yv-border);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: transparent;
+}
+
+.choice-card:hover .choice-check-indicator {
+  border-color: var(--yv-saffron-light);
+}
+
+.choice-check-indicator .check-svg {
+  width: 15px;
+  height: 15px;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  fill: #FFFFFF;
+}
+
+.choice-card input:checked + .choice-card-inner .choice-check-indicator {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+  border-color: #D35400;
+  box-shadow: 0 3px 10px rgba(211, 84, 0, 0.35);
+  transform: scale(1.08);
+}
+
+.choice-card input:checked + .choice-card-inner .choice-check-indicator .check-svg {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .choice-title {
