@@ -54,10 +54,10 @@ body {
 
 /* Header */
 .header-top {
-  background: linear-gradient(135deg, #D35400 0%, #E67E22 50%, #F39C12 100%);
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border-bottom: 2px solid #FAD7A1;
+  color: var(--yv-text-dark);
   padding: 1.1rem 1.5rem;
-  box-shadow: var(--yv-shadow-md);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -67,46 +67,56 @@ body {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .logo-brand {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1.2rem;
   text-decoration: none;
-  color: white;
 }
 
-.om-symbol-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  background: #FDF5E6;
+  border: 3px solid #D35400;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #FFF;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+  font-size: 2rem;
+  color: #8B2E16;
+  box-shadow: 0 4px 10px rgba(211, 84, 0, 0.15);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-text h1 {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  color: #D35400;
+  text-transform: uppercase;
+  margin: 0;
   line-height: 1.2;
 }
 
-.brand-text p {
-  font-size: 0.82rem;
-  opacity: 0.94;
-  letter-spacing: 0.3px;
+.brand-text h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #8B2E16;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
 }
 
 /* Hero Banner */
