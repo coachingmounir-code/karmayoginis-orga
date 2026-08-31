@@ -87,9 +87,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: #8B2E16;
+  overflow: hidden;
   box-shadow: 0 4px 10px rgba(211, 84, 0, 0.15);
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand-text {
