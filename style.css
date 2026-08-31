@@ -458,6 +458,84 @@ body {
   margin-top: 1px;
 }
 
+/* Membership Notice in Choice Card */
+.membership-notice {
+  margin-top: 1rem;
+  background: #FFF9EE;
+  border: 1.5px solid #F39C12;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  font-size: 0.82rem;
+  color: var(--yv-earth);
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(243, 156, 18, 0.12);
+  text-align: left;
+}
+
+.membership-notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--yv-saffron-deep);
+  margin-bottom: 0.35rem;
+  font-size: 0.86rem;
+}
+
+.membership-icon {
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.membership-notice-text {
+  color: var(--yv-text-dark);
+  margin-bottom: 0.65rem;
+  font-size: 0.82rem;
+}
+
+.membership-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.membership-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.42rem 0.8rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.membership-btn-primary {
+  background: var(--yv-saffron);
+  color: #FFFFFF !important;
+  border: 1px solid var(--yv-saffron-deep);
+}
+
+.membership-btn-primary:hover {
+  background: var(--yv-saffron-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(211, 84, 0, 0.25);
+}
+
+.membership-btn-secondary {
+  background: #FFFFFF;
+  color: var(--yv-earth) !important;
+  border: 1px solid var(--yv-border);
+}
+
+.membership-btn-secondary:hover {
+  background: #FDF4E7;
+  border-color: var(--yv-saffron);
+  color: var(--yv-saffron-deep) !important;
+}
+
 /* Skills Grid */
 .skills-grid {
   display: grid;
