@@ -46,63 +46,60 @@
 
     <!-- Form Card -->
     <div class="spiritual-card" id="formCard">
+      
+      <div id="progressBarContainer" class="progress-bar-container">
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div id="progressText" class="progress-text">Frage 1 von 10</div>
+      </div>
+
       <form id="karmaYogaForm" onsubmit="handleFormSubmit(event)">
 
-        <!-- ABSCHNITT 1: PERSÖNLICHE DATEN & AUFENTHALT -->
-        <section class="form-section">
-          <div class="section-header">
-            <span class="section-badge">1</span>
-            <div>
-              <h3 class="section-title">Wer bist du &amp; wann möchtest du kommen?</h3>
-              <p class="section-desc">Deine Kontaktdaten und dein gewünschter Zeitraum im Seminarhaus.</p>
-            </div>
+        <!-- Step 1: Name -->
+        <div class="wizard-step" id="step-1">
+          <h3 class="wizard-question">Wie lautet dein Name?</h3>
+          <div class="form-group">
+            <label class="form-label" for="fullName">Vor- und Nachname <span class="required-star">*</span></label>
+            <input type="text" id="fullName" name="fullName" class="form-input wizard-input" placeholder="z. B. Lisa Müller" required>
           </div>
-
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label" for="fullName">Vor- und Nachname <span class="required-star">*</span></label>
-              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="z. B. Lisa Müller" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="spiritualName">Spiritueller Name <span class="form-help">(falls vorhanden)</span></label>
-              <input type="text" id="spiritualName" name="spiritualName" class="form-input" placeholder="z. B. Gayatri, Anand...">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">E-Mail-Adresse <span class="required-star">*</span></label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="name@beispiel.de" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="phone">Telefon- / WhatsApp-Nummer <span class="required-star">*</span></label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+49 170 1234567" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="arrivalDate">Geplante Anreise <span class="required-star">*</span></label>
-              <input type="date" id="arrivalDate" name="arrivalDate" class="form-input" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="departureDate">Geplante Abreise <span class="required-star">*</span></label>
-              <input type="date" id="departureDate" name="departureDate" class="form-input" required>
-            </div>
+          <div class="form-group">
+            <label class="form-label" for="spiritualName">Spiritueller Name <span class="form-help">(falls vorhanden)</span></label>
+            <input type="text" id="spiritualName" name="spiritualName" class="form-input wizard-input" placeholder="z. B. Gayatri, Anand...">
           </div>
-        </section>
+        </div>
 
-        <!-- ABSCHNITT 2: KARMA YOGA MODELL -->
-        <section class="form-section">
-          <div class="section-header">
-            <span class="section-badge">2</span>
-            <div>
-              <h3 class="section-title">Welches Karma Yoga Modell möchtest du machen?</h3>
-              <p class="section-desc">Wähle die Zeitform, die am besten zu deiner aktuellen Lebensphase passt.</p>
-            </div>
+        <!-- Step 2: Kontakt -->
+        <div class="wizard-step" id="step-2" style="display:none;">
+          <h3 class="wizard-question">Wie können wir dich erreichen?</h3>
+          <div class="form-group">
+            <label class="form-label" for="email">E-Mail-Adresse <span class="required-star">*</span></label>
+            <input type="email" id="email" name="email" class="form-input wizard-input" placeholder="name@beispiel.de" required>
           </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Telefon- / WhatsApp-Nummer <span class="required-star">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-input wizard-input" placeholder="+49 170 1234567" required>
+          </div>
+        </div>
 
+        <!-- Step 3: Datum -->
+        <div class="wizard-step" id="step-3" style="display:none;">
+          <h3 class="wizard-question">Wann möchtest du kommen?</h3>
+          <div class="form-group">
+            <label class="form-label" for="arrivalDate">Geplante Anreise <span class="required-star">*</span></label>
+            <input type="date" id="arrivalDate" name="arrivalDate" class="form-input wizard-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="departureDate">Geplante Abreise <span class="required-star">*</span></label>
+            <input type="date" id="departureDate" name="departureDate" class="form-input wizard-input" required>
+          </div>
+        </div>
+
+        <!-- Step 4: Modell -->
+        <div class="wizard-step" id="step-4" style="display:none;">
+          <h3 class="wizard-question">Welches Karma Yoga Modell möchtest du machen?</h3>
+          <p class="section-desc">Wähle die Zeitform, die am besten zu deiner aktuellen Lebensphase passt.</p>
           <div class="choice-card-grid">
-            <!-- 3 Stunden Modell -->
             <label class="choice-card">
               <input type="radio" name="karmaModel" value="3h" checked>
               <div class="choice-card-inner">
@@ -111,19 +108,9 @@
                   <span class="choice-status-pill">3 Stunden / Tag</span>
                 </div>
                 <h4 class="choice-title">3-Stunden Karma Yoga Modell</h4>
-                <p class="choice-desc">
-                  Mithilfe im Haus bei gleichzeitig viel freier Zeit für eigene Seminare, ausgiebige Yogastunden, Meditation oder persönliche Erholung.
-                </p>
-                <ul class="choice-features">
-                  <li>3 Stunden Mithilfe täglich</li>
-                  <li>Viel Raum für eigene Yoga-Praxis &amp; Seminare</li>
-                  <li>Leckere biologisch-vegane Vollverpflegung</li>
-                  <li>Vergünstigter Seminarhausbeitrag</li>
-                </ul>
+                <p class="choice-desc">Viel freie Zeit für eigene Seminare, ausgiebige Yogastunden oder persönliche Erholung.</p>
               </div>
             </label>
-
-            <!-- 6 Stunden Modell -->
             <label class="choice-card">
               <input type="radio" name="karmaModel" value="6h">
               <div class="choice-card-inner">
@@ -132,137 +119,121 @@
                   <span class="choice-status-pill">6 Stunden / Tag</span>
                 </div>
                 <h4 class="choice-title">6-Stunden Karma Yoga Modell</h4>
-                <p class="choice-desc">
-                  Vollzeit-Mithilfe und tiefes Eintauchen in die Ashram-Gemeinschaft. Selbstloses Handeln von Herzen im vollen Rhythmus des Hauses.
-                </p>
-                <ul class="choice-features">
-                  <li>6 Stunden Mithilfe täglich</li>
-                  <li>Freie Unterkunft im Ashram inklusive</li>
-                  <li>Kostenfreie biologisch-vegane Vollverpflegung</li>
-                  <li>Tägliche Teilnahme an Satsangs &amp; offenen Yogastunden</li>
-                </ul>
+                <p class="choice-desc">Vollzeit-Mithilfe und tiefes Eintauchen in die Ashram-Gemeinschaft inkl. Kost & Logis.</p>
               </div>
             </label>
           </div>
-        </section>
+        </div>
 
-        <!-- ABSCHNITT 3: FÄHIGKEITEN & EINSATZBEREICHE -->
-        <section class="form-section">
-          <div class="section-header">
-            <span class="section-badge">3</span>
-            <div>
-              <h3 class="section-title">Wo möchtest du mithelfen &amp; was kannst du gut?</h3>
-              <p class="section-desc">Wähle die Bereiche aus, die dir Freude machen. (Mehrfachauswahl möglich)</p>
-            </div>
-          </div>
-
-          <div class="skills-grid" style="margin-bottom: 1.25rem;">
+        <!-- Step 5: Bereiche -->
+        <div class="wizard-step" id="step-5" style="display:none;">
+          <h3 class="wizard-question">Wo möchtest du mithelfen?</h3>
+          <p class="section-desc">Wähle die Bereiche aus, die dir Freude machen. (Mehrfachauswahl möglich)</p>
+          <div class="skills-grid">
             <label class="skill-pill-card">
               <input type="checkbox" name="workAreas" value="kitchen" checked>
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🥗</span>
                 <div class="skill-info">
-                  <h4>Küche &amp; Kochen</h4>
-                  <p>Schnippeln, Zubereiten, Buffet &amp; Abwasch</p>
+                  <h4>Küche & Kochen</h4>
+                  <p>Schnippeln, Buffet & Abwasch</p>
                 </div>
               </div>
             </label>
-
             <label class="skill-pill-card">
               <input type="checkbox" name="workAreas" value="housekeeping">
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🧹</span>
                 <div class="skill-info">
-                  <h4>Zimmer &amp; Housekeeping</h4>
-                  <p>Gästezimmer, Betten, Tempel- &amp; Raumpflege</p>
+                  <h4>Zimmer & Housekeeping</h4>
+                  <p>Gästezimmer, Tempelpflege</p>
                 </div>
               </div>
             </label>
-
             <label class="skill-pill-card">
               <input type="checkbox" name="workAreas" value="garden">
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🌿</span>
                 <div class="skill-info">
-                  <h4>Garten &amp; Natur</h4>
-                  <p>Beete, Kräuter, Permakultur, Außenbereich</p>
+                  <h4>Garten & Natur</h4>
+                  <p>Beete, Permakultur</p>
                 </div>
               </div>
             </label>
-
             <label class="skill-pill-card">
               <input type="checkbox" name="workAreas" value="crafts">
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🔨</span>
                 <div class="skill-info">
-                  <h4>Handwerk &amp; Reparaturen</h4>
-                  <p>Holzarbeiten, Malern, Instandhaltung</p>
+                  <h4>Handwerk & Reparaturen</h4>
+                  <p>Holzarbeiten, Malern</p>
                 </div>
               </div>
             </label>
-
             <label class="skill-pill-card">
               <input type="checkbox" name="workAreas" value="reception">
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">💻</span>
                 <div class="skill-info">
-                  <h4>Rezeption &amp; Gästebetreuung</h4>
-                  <p>Check-In, Telefon, Seminarbegleitung</p>
+                  <h4>Rezeption & Gästebetreuung</h4>
+                  <p>Check-In, Telefon</p>
                 </div>
               </div>
             </label>
-
             <label class="skill-pill-card">
               <input type="checkbox" name="workAreas" value="music_tech">
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🎵</span>
                 <div class="skill-info">
-                  <h4>Musik, Kirtan &amp; Satsang</h4>
-                  <p>Harmonium, Gesang, Trommel, Tontechnik</p>
+                  <h4>Musik, Kirtan & Satsang</h4>
+                  <p>Harmonium, Tontechnik</p>
                 </div>
               </div>
             </label>
           </div>
+        </div>
 
+        <!-- Step 6: Qualifikationen -->
+        <div class="wizard-step" id="step-6" style="display:none;">
+          <h3 class="wizard-question">Was kannst du gut?</h3>
           <div class="form-group full-width">
             <label class="form-label" for="qualifications">Deine besonderen Qualifikationen, Berufe oder Hobbys</label>
-            <textarea id="qualifications" name="qualifications" class="form-textarea" placeholder="z. B. Gelernter Koch/Köchin, Handwerker, Yogalehrer/in, Ersthelfer, IT-Kenntnisse, Musiker..."></textarea>
+            <textarea id="qualifications" name="qualifications" class="form-textarea wizard-input" placeholder="z. B. Gelernter Koch/Köchin, Handwerker, Yogalehrer/in, Ersthelfer, IT-Kenntnisse, Musiker..."></textarea>
           </div>
-        </section>
+        </div>
 
-        <!-- ABSCHNITT 4: ERFAHRUNGEN & MOTIVATION -->
-        <section class="form-section">
-          <div class="section-header">
-            <span class="section-badge">4</span>
-            <div>
-              <h3 class="section-title">Deine Yoga-Erfahrung, Ernährung &amp; Motivation</h3>
-              <p class="section-desc">Erzähle uns kurz von deiner Yoga-Praxis und was dich zu uns führt.</p>
-            </div>
+        <!-- Step 7: Yoga-Erfahrung -->
+        <div class="wizard-step" id="step-7" style="display:none;">
+          <h3 class="wizard-question">Deine Yoga-Erfahrung</h3>
+          <div class="form-group full-width">
+            <label class="form-label" for="yogaExperience">Welche Erfahrungen hast du bereits mit Yoga oder Yoga Vidya gemacht? <span class="required-star">*</span></label>
+            <textarea id="yogaExperience" name="yogaExperience" class="form-textarea wizard-input" placeholder="z. B. Schon öfter in Bad Meinberg gewesen / Übe seit 2 Jahren Hatha Yoga / Yogalehrer-Ausbildung / Erstes Mal bei Yoga Vidya..." required></textarea>
           </div>
+        </div>
 
-          <div class="form-grid">
-            <div class="form-group full-width">
-              <label class="form-label" for="yogaExperience">Welche Erfahrungen hast du bereits mit Yoga oder Yoga Vidya gemacht? <span class="required-star">*</span></label>
-              <textarea id="yogaExperience" name="yogaExperience" class="form-textarea" placeholder="z. B. Schon öfter in Bad Meinberg gewesen / Übe seit 2 Jahren Hatha Yoga / Yogalehrer-Ausbildung / Erstes Mal bei Yoga Vidya..." required></textarea>
-            </div>
-
-            <div class="form-group full-width">
-              <label class="form-label" for="motivation">Was ist deine persönliche Motivation für das Karma Yoga? <span class="required-star">*</span></label>
-              <textarea id="motivation" name="motivation" class="form-textarea" placeholder="Warum möchtest du zu uns kommen? Was wünschst du dir für deinen Aufenthalt?" required></textarea>
-            </div>
-
-            <div class="form-group full-width">
-              <label class="form-label" for="healthAndDiet">Ernährung, Allergien oder körperliche Besonderheiten</label>
-              <input type="text" id="healthAndDiet" name="healthAndDiet" class="form-input" placeholder="z. B. Glutenunverträglichkeit, Rückenbeschwerden (kein schweres Heben), 100% vegan...">
-            </div>
+        <!-- Step 8: Motivation -->
+        <div class="wizard-step" id="step-8" style="display:none;">
+          <h3 class="wizard-question">Was führt dich zu uns?</h3>
+          <div class="form-group full-width">
+            <label class="form-label" for="motivation">Was ist deine persönliche Motivation für das Karma Yoga? <span class="required-star">*</span></label>
+            <textarea id="motivation" name="motivation" class="form-textarea wizard-input" placeholder="Warum möchtest du zu uns kommen? Was wünschst du dir für deinen Aufenthalt?" required></textarea>
           </div>
+        </div>
 
-          <!-- Ashram Rules & Checkbox -->
-          <div class="ashram-rules-card" style="margin-top: 1.5rem;">
-            <div class="ashram-rules-header">
-              <span>🕉️</span> Die spirituelle Ausrichtung unseres Hauses
-            </div>
-            <p style="font-size: 0.9rem; color: var(--yv-earth); margin-bottom: 0.75rem;">
+        <!-- Step 9: Gesundheit -->
+        <div class="wizard-step" id="step-9" style="display:none;">
+          <h3 class="wizard-question">Gesundheit & Ernährung</h3>
+          <div class="form-group full-width">
+            <label class="form-label" for="healthAndDiet">Ernährung, Allergien oder körperliche Besonderheiten</label>
+            <input type="text" id="healthAndDiet" name="healthAndDiet" class="form-input wizard-input" placeholder="z. B. Glutenunverträglichkeit, Rückenbeschwerden (kein schweres Heben)...">
+          </div>
+        </div>
+
+        <!-- Step 10: Ashram Regeln -->
+        <div class="wizard-step" id="step-10" style="display:none;">
+          <h3 class="wizard-question">Die spirituelle Ausrichtung</h3>
+          <div class="ashram-rules-card" style="margin-top: 1rem;">
+            <p style="font-size: 0.95rem; color: var(--yv-earth); margin-bottom: 0.75rem;">
               Unser Seminarhaus ist ein geschützter Ort der Ruhe und des Friedens:
             </p>
             <div class="ashram-rule-item">
@@ -275,26 +246,27 @@
             </div>
             <div class="ashram-rule-item">
               <span class="rule-number">✓</span>
-              <div><strong>Achtsamkeit &amp; Nachtruhe:</strong> Respektvolles Miteinander im Seva-Geist.</div>
+              <div><strong>Achtsamkeit & Nachtruhe:</strong> Respektvolles Miteinander im Seva-Geist.</div>
             </div>
           </div>
-
-          <label class="custom-checkbox-row">
+          <label class="custom-checkbox-row" style="margin-top: 1.5rem;">
             <input type="checkbox" id="acceptRules" name="acceptRules" required>
             <span class="checkbox-text">
               <strong>Ich bejahe die spirituellen Ashram-Regeln</strong> und freue mich auf das gemeinsame Wirken im Karma Yoga. <span class="required-star">*</span>
             </span>
           </label>
-        </section>
+        </div>
 
-        <!-- Submit Button -->
-        <div class="form-submit-wrapper">
-          <button type="submit" class="btn btn-primary btn-large">
-            🙏 Karma Yoga Anmeldung absenden
-          </button>
+        <!-- Navigation Buttons -->
+        <div class="wizard-nav" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--yv-border); padding-top: 1.5rem;">
+          <button type="button" class="btn btn-secondary" id="btnPrev" style="display:none;" onclick="prevStep()">← Zurück</button>
+          <div style="flex-grow: 1;"></div>
+          <button type="button" class="btn btn-primary" id="btnNext" onclick="nextStep()">Weiter →</button>
+          <button type="submit" class="btn btn-primary" id="btnSubmit" style="display:none;">🙏 Anmeldung absenden</button>
         </div>
 
       </form>
+
 
       <!-- SUCCESS CONFIRMATION (Shown after submission) -->
       <div id="successScreen" style="display: none;" class="success-screen">

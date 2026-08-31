@@ -232,3 +232,130 @@ function formatDate(dateStr) {
     return dateStr;
   }
 }
+
+// --- WIZARD LOGIC ---
+let currentStep = 1;
+const totalSteps = 10;
+
+function updateWizardUI() {
+  // Hide all steps
+  for (let i = 1; i <= totalSteps; i++) {
+    const stepEl = document.getElementById(`step-${i}`);
+    if (stepEl) {
+      stepEl.style.display = (i === currentStep) ? "block" : "none";
+      // Add a small fade-in animation
+      if (i === currentStep) {
+        stepEl.style.opacity = 0;
+        stepEl.style.transform = "translateY(10px)";
+        setTimeout(() => {
+          stepEl.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+          stepEl.style.opacity = 1;
+          stepEl.style.transform = "translateY(0)";
+        }, 10);
+      }
+    }
+  }
+
+  // Update Buttons
+  document.getElementById("btnPrev").style.display = (currentStep === 1) ? "none" : "inline-flex";
+  document.getElementById("btnNext").style.display = (currentStep === totalSteps) ? "none" : "inline-flex";
+  document.getElementById("btnSubmit").style.display = (currentStep === totalSteps) ? "inline-flex" : "none";
+
+  // Update Progress Bar
+  const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+  document.getElementById("progressFill").style.width = `${progressPercent}%`;
+  document.getElementById("progressText").textContent = `Frage ${currentStep} von ${totalSteps}`;
+  
+  // Focus first input of the step
+  const activeStep = document.getElementById(`step-${currentStep}`);
+  if (activeStep) {
+    const firstInput = activeStep.querySelector('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]), textarea');
+    if (firstInput) {
+      setTimeout(() => firstInput.focus(), 100);
+    }
+  }
+}
+
+function validateStep(step) {
+  const stepEl = document.getElementById(`step-${step}`);
+  if (!stepEl) return true;
+  
+  const requiredInputs = stepEl.querySelectorAll("[required]");
+  let valid = true;
+  for (let i = 0; i < requiredInputs.length; i++) {
+    if (!requiredInputs[i].checkValidity()) {
+      requiredInputs[i].reportValidity();
+      valid = false;
+      break;
+    }
+  }
+  
+  if (valid && step === 3) {
+    const arr = document.getElementById("arrivalDate").value;
+    const dep = document.getElementById("departureDate").value;
+    if (arr && dep && new Date(dep) <= new Date(arr)) {
+      alert("Das Abreisedatum muss nach dem Anreisedatum liegen.");
+      valid = false;
+    }
+  }
+  
+  if (valid && step === 5) {
+    const checkedBoxes = stepEl.querySelectorAll("input[type='checkbox']:checked");
+    if (checkedBoxes.length === 0) {
+      alert("Bitte wähle mindestens einen Bereich aus.");
+      valid = false;
+    }
+  }
+
+  return valid;
+}
+
+function nextStep() {
+  if (!validateStep(currentStep)) return;
+  if (currentStep < totalSteps) {
+    currentStep++;
+    updateWizardUI();
+    window.scrollTo({ top: document.getElementById("formCard").offsetTop - 80, behavior: "smooth" });
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    currentStep--;
+    updateWizardUI();
+    window.scrollTo({ top: document.getElementById("formCard").offsetTop - 80, behavior: "smooth" });
+  }
+}
+
+// Intercept Enter key to go to next step
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    // Only intercept if we are not on a textarea or the submit step
+    if (event.target.tagName !== 'TEXTAREA' && currentStep < totalSteps) {
+      event.preventDefault();
+      nextStep();
+    }
+  }
+});
+
+// Initialize wizard on load
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(updateWizardUI, 50);
+});
+
+// Overwrite startNewForm to reset wizard
+const originalStartNewForm = startNewForm;
+window.startNewForm = function() {
+  originalStartNewForm();
+  currentStep = 1;
+  updateWizardUI();
+};
+
+// Auto-advance on radio button change (Step 4)
+document.querySelectorAll('input[name="karmaModel"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    if (currentStep === 4) {
+      setTimeout(nextStep, 300); // short delay to show selection
+    }
+  });
+});
