@@ -1,0 +1,769 @@
+/* ==========================================================================
+   YOGA VIDYA STIL - KARMA YOGI FRAGEBOGEN & ANMELDUNG
+   Farben: Safran (#E67E22), Tiefsafran (#D35400), Sonnengold (#F39C12), 
+           Sandelholz/Creme (#FCF9F2, #FFFDF9), Waldgrün (#2E7D32)
+   ========================================================================== */
+
+:root {
+  --yv-saffron: #E67E22;
+  --yv-saffron-dark: #C0392B;
+  --yv-saffron-deep: #D35400;
+  --yv-saffron-light: #FAD7A0;
+  --yv-saffron-soft: #FEF6E9;
+  --yv-gold: #F39C12;
+  --yv-gold-light: #FCF3CF;
+  --yv-cream-bg: #FCF9F2;
+  --yv-card-bg: #FFFFFF;
+  --yv-earth: #4A3B32;
+  --yv-earth-light: #795548;
+  --yv-forest-green: #2E7D32;
+  --yv-forest-light: #E8F5E9;
+  --yv-text-dark: #2C221E;
+  --yv-text-muted: #6E6259;
+  --yv-border: #EADBCE;
+  --yv-shadow-sm: 0 2px 8px rgba(138, 80, 28, 0.06);
+  --yv-shadow-md: 0 6px 20px rgba(138, 80, 28, 0.10);
+  --yv-shadow-lg: 0 12px 36px rgba(138, 80, 28, 0.14);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Outfit", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--yv-cream-bg);
+  color: var(--yv-text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(243, 156, 18, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.06) 0%, transparent 40%);
+}
+
+/* Header */
+.header-top {
+  background: linear-gradient(135deg, #D35400 0%, #E67E22 50%, #F39C12 100%);
+  color: #FFFFFF;
+  padding: 1.1rem 1.5rem;
+  box-shadow: var(--yv-shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: white;
+}
+
+.om-symbol-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFF;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.brand-text h1 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.brand-text p {
+  font-size: 0.82rem;
+  opacity: 0.94;
+  letter-spacing: 0.3px;
+}
+
+/* Hero Banner */
+.hero-spiritual-banner {
+  background: linear-gradient(180deg, #FDEBD0 0%, var(--yv-cream-bg) 100%);
+  padding: 2.8rem 1.5rem 1.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--yv-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-spiritual-banner::before {
+  content: "ॐ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22rem;
+  color: rgba(230, 126, 34, 0.035);
+  font-family: var(--font-serif);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.spiritual-subtitle {
+  color: var(--yv-saffron-deep);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--yv-earth);
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+
+.hero-lead {
+  font-size: 1.05rem;
+  color: var(--yv-text-muted);
+  margin-bottom: 1.3rem;
+  line-height: 1.55;
+}
+
+.quote-box {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px dashed var(--yv-saffron);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-style: italic;
+  color: var(--yv-earth-light);
+  font-size: 0.92rem;
+  box-shadow: var(--yv-shadow-sm);
+}
+
+.quote-box .author {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--yv-saffron-deep);
+}
+
+/* Main Container */
+.main-wrapper {
+  max-width: 860px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.25rem;
+}
+
+/* Card Container */
+.spiritual-card {
+  background: var(--yv-card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--yv-border);
+  box-shadow: var(--yv-shadow-lg);
+  padding: 2.5rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .spiritual-card {
+    padding: 1.4rem;
+  }
+}
+
+/* Form Sections */
+.form-section {
+  padding-bottom: 2.25rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1.5px dashed var(--yv-border);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-badge {
+  background: var(--yv-saffron);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--yv-earth);
+  line-height: 1.3;
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--yv-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Form Inputs & Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--yv-earth);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.form-label .required-star {
+  color: var(--yv-saffron-dark);
+}
+
+.form-help {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--yv-text-muted);
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--yv-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--yv-text-dark);
+  background-color: #FAFAF7;
+  transition: var(--transition);
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--yv-saffron);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+}
+
+.form-textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+/* Choice Cards (Radio 3h vs 6h) */
+.choice-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 680px) {
+  .choice-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.choice-card {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.choice-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-card-inner {
+  border: 2px solid var(--yv-border);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  background: #FCFBF7;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.choice-card:hover .choice-card-inner {
+  border-color: var(--yv-saffron-light);
+  background: #FFFDF9;
+  transform: translateY(-2px);
+  box-shadow: var(--yv-shadow-sm);
+}
+
+.choice-card input:checked + .choice-card-inner {
+  border-color: var(--yv-saffron);
+  background: var(--yv-saffron-soft);
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.15);
+}
+
+.choice-badge-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.choice-icon {
+  font-size: 1.8rem;
+}
+
+.choice-status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: #EADBCE;
+  color: var(--yv-earth);
+}
+
+.choice-card input:checked + .choice-card-inner .choice-status-pill {
+  background: var(--yv-saffron);
+  color: white;
+}
+
+.choice-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--yv-earth);
+  margin-bottom: 0.4rem;
+}
+
+.choice-card input:checked + .choice-card-inner .choice-title {
+  color: var(--yv-saffron-deep);
+}
+
+.choice-desc {
+  font-size: 0.88rem;
+  color: var(--yv-text-muted);
+  line-height: 1.45;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+
+.choice-features {
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(230, 126, 34, 0.25);
+  font-size: 0.83rem;
+  color: var(--yv-earth);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.choice-features li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.choice-features li::before {
+  content: "✓";
+  color: var(--yv-forest-green);
+  font-weight: bold;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+
+.skill-pill-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.skill-pill-card input {
+  position: absolute;
+  opacity: 0;
+}
+
+.skill-pill-inner {
+  border: 1.5px solid var(--yv-border);
+  background: #FCFBF7;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: var(--transition);
+}
+
+.skill-pill-card:hover .skill-pill-inner {
+  border-color: var(--yv-saffron);
+  background: white;
+}
+
+.skill-pill-card input:checked + .skill-pill-inner {
+  border-color: var(--yv-saffron);
+  background: var(--yv-saffron-soft);
+}
+
+.skill-icon-emoji {
+  font-size: 1.4rem;
+  background: white;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--yv-border);
+  flex-shrink: 0;
+}
+
+.skill-info h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--yv-earth);
+}
+
+.skill-info p {
+  font-size: 0.76rem;
+  color: var(--yv-text-muted);
+}
+
+/* Ashram Rules */
+.ashram-rules-card {
+  background: #FEF9F3;
+  border: 1.5px solid var(--yv-saffron-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.ashram-rules-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  color: var(--yv-saffron-deep);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.ashram-rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--yv-earth);
+}
+
+.ashram-rule-item:last-child {
+  margin-bottom: 0;
+}
+
+.rule-number {
+  background: var(--yv-saffron);
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Checkbox Row */
+.custom-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--yv-border);
+  background: #FCFBF7;
+  transition: var(--transition);
+}
+
+.custom-checkbox-row:hover {
+  background: #FFFFFF;
+  border-color: var(--yv-saffron);
+}
+
+.custom-checkbox-row input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--yv-saffron);
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 0.92rem;
+  color: var(--yv-earth);
+  line-height: 1.4;
+}
+
+/* Submit Action Button */
+.form-submit-wrapper {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--yv-border);
+  text-align: center;
+}
+
+.btn {
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  border: none;
+  text-decoration: none;
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(211, 84, 0, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 84, 0, 0.35);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: var(--yv-earth);
+  border: 1.5px solid var(--yv-border);
+}
+
+.btn-secondary:hover {
+  background: #F5EBE1;
+  border-color: var(--yv-earth-light);
+}
+
+.btn-outline-saffron {
+  background: transparent;
+  color: var(--yv-saffron-deep);
+  border: 1.5px solid var(--yv-saffron);
+}
+
+.btn-outline-saffron:hover {
+  background: var(--yv-saffron-soft);
+}
+
+/* Success Screen */
+.success-screen {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.success-icon-badge {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--radius-full);
+  background: var(--yv-forest-light);
+  border: 2px solid var(--yv-forest-green);
+  color: var(--yv-forest-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+}
+
+.success-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--yv-earth);
+  margin-bottom: 0.6rem;
+}
+
+.success-lead {
+  font-size: 1.05rem;
+  color: var(--yv-text-muted);
+  max-width: 600px;
+  margin: 0 auto 1.8rem;
+}
+
+.summary-preview-card {
+  text-align: left;
+  background: #FEFCF9;
+  border: 1px solid var(--yv-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 650px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--yv-border);
+  font-size: 0.92rem;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--yv-text-muted);
+  font-weight: 600;
+}
+
+.summary-val {
+  color: var(--yv-earth);
+  font-weight: 600;
+  text-align: right;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+/* Footer */
+.spiritual-footer {
+  background: var(--yv-earth);
+  color: #F5EFEB;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 4px solid var(--yv-saffron);
+}
+
+.footer-quote {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--yv-gold-light);
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+
+.footer-mantra {
+  font-size: 0.9rem;
+  color: #D7CCC8;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-credits {
+  font-size: 0.8rem;
+  color: #A1887F;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Print Optimization */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .header-top, .hero-spiritual-banner, .form-submit-wrapper, .success-actions, .spiritual-footer, .btn {
+    display: none !important;
+  }
+  .spiritual-card, .summary-preview-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
