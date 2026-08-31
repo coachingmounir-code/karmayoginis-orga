@@ -57,7 +57,7 @@ body {
   background: #FFFFFF;
   border-bottom: 2px solid #FAD7A1;
   color: var(--yv-text-dark);
-  padding: 1.1rem 1.5rem;
+  padding: 1rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -74,43 +74,40 @@ body {
 .logo-brand {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.35rem;
   text-decoration: none;
 }
 
 .logo-circle {
-  width: 60px;
-  height: 60px;
-  background: #FDF5E6;
-  border: 3px solid #D35400;
-  border-radius: var(--radius-full);
+  width: 68px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(211, 84, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .logo-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: block;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .brand-text h1 {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   color: #D35400;
   text-transform: uppercase;
-  margin: 0;
-  line-height: 1.2;
+  margin: 0 0 2px 0;
+  line-height: 1.15;
 }
 
 .brand-text h2 {
@@ -121,7 +118,7 @@ body {
   color: #8B2E16;
   text-transform: uppercase;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 /* Hero Banner */
@@ -843,5 +840,23 @@ body {
 @media (max-width: 600px) {
   .wizard-question {
     font-size: 1.4rem;
+  }
+  .header-top {
+    padding: 0.75rem 1rem;
+  }
+  .logo-brand {
+    gap: 0.9rem;
+  }
+  .logo-circle {
+    width: 52px;
+    height: 52px;
+  }
+  .brand-text h1 {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+  }
+  .brand-text h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
   }
 }
