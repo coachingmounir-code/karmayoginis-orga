@@ -10,7 +10,6 @@ const AREA_LABELS = {
   housekeeping: "🧹 Zimmer & Housekeeping",
   garden: "🌿 Garten & Natur",
   crafts: "🔨 Handwerk & Reparaturen",
-  reception: "💻 Rezeption & Gästebetreuung",
   music_tech: "🎵 Musik, Kirtan & Satsang"
 };
 
