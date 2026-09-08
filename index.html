@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Karma Yoga Anmeldung | Yoga Vidya Seminarhaus</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -326,11 +326,11 @@
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="wizard-nav" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--yv-border); padding-top: 1.5rem;">
-          <button type="button" class="btn btn-secondary" id="btnPrev" style="display:none;" onclick="prevStep()">← Zurück</button>
-          <div style="flex-grow: 1;"></div>
-          <button type="button" class="btn btn-primary" id="btnNext" onclick="nextStep()">Weiter →</button>
-          <button type="submit" class="btn btn-primary" id="btnSubmit" style="display:none;">🙏 Anmeldung absenden</button>
+        <div class="wizard-nav">
+          <button type="button" class="btn btn-secondary btn-prev" id="btnPrev" style="display:none;" onclick="prevStep()">← Zurück</button>
+          <div class="wizard-nav-spacer"></div>
+          <button type="button" class="btn btn-primary btn-next" id="btnNext" onclick="nextStep()">Weiter →</button>
+          <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit" style="display:none;">🙏 Anmeldung absenden</button>
         </div>
 
       </form>

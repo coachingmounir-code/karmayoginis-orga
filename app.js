@@ -184,7 +184,7 @@ function showSuccess(data) {
 
   form.style.display = "none";
   successScreen.style.display = "block";
-  window.scrollTo({ top: 120, behavior: "smooth" });
+  scrollToCard();
 }
 
 function sendViaEmail() {
@@ -217,7 +217,7 @@ function startNewForm() {
   localStorage.removeItem(STORAGE_DRAFT_KEY);
   form.style.display = "block";
   successScreen.style.display = "none";
-  window.scrollTo({ top: 120, behavior: "smooth" });
+  scrollToCard();
 }
 
 // Helpers
@@ -274,14 +274,34 @@ function updateWizardUI() {
   document.getElementById("progressFill").style.width = `${progressPercent}%`;
   document.getElementById("progressText").textContent = `Frage ${currentStep} von ${totalSteps}`;
   
-  // Focus first input of the step
-  const activeStep = document.getElementById(`step-${currentStep}`);
-  if (activeStep) {
-    const firstInput = activeStep.querySelector('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]), textarea');
-    if (firstInput) {
-      setTimeout(() => firstInput.focus(), 100);
+  // Focus first input of the step on non-touch desktop screens only
+  // (Prevents jarring virtual keyboard popup on mobile smartphones)
+  const isTouchMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+  if (!isTouchMobile) {
+    const activeStep = document.getElementById(`step-${currentStep}`);
+    if (activeStep) {
+      const firstInput = activeStep.querySelector('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]), textarea');
+      if (firstInput) {
+        setTimeout(() => {
+          try {
+            firstInput.focus({ preventScroll: true });
+          } catch (e) {
+            firstInput.focus();
+          }
+        }, 100);
+      }
     }
   }
+}
+
+function scrollToCard() {
+  const card = document.getElementById("formCard");
+  if (!card) return;
+  const header = document.querySelector(".header-top");
+  const headerOffset = header ? header.offsetHeight : 64;
+  const cardTop = card.getBoundingClientRect().top + window.pageYOffset;
+  const targetY = Math.max(0, cardTop - headerOffset - 12);
+  window.scrollTo({ top: targetY, behavior: "smooth" });
 }
 
 function validateStep(step) {
@@ -323,7 +343,7 @@ function nextStep() {
   if (currentStep < totalSteps) {
     currentStep++;
     updateWizardUI();
-    window.scrollTo({ top: document.getElementById("formCard").offsetTop - 80, behavior: "smooth" });
+    scrollToCard();
   }
 }
 
@@ -331,7 +351,7 @@ function prevStep() {
   if (currentStep > 1) {
     currentStep--;
     updateWizardUI();
-    window.scrollTo({ top: document.getElementById("formCard").offsetTop - 80, behavior: "smooth" });
+    scrollToCard();
   }
 }
 
