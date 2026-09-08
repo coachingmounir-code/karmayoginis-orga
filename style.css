@@ -860,47 +860,13 @@ body {
   margin-top: 1.75rem;
 }
 
-/* Footer */
-.spiritual-footer {
-  background: var(--yv-earth);
-  color: #F5EFEB;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  margin-top: 4rem;
-  border-top: 4px solid var(--yv-saffron);
-}
-
-.footer-quote {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--yv-gold-light);
-  margin-bottom: 0.6rem;
-  font-style: italic;
-}
-
-.footer-mantra {
-  font-size: 0.9rem;
-  color: #D7CCC8;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-}
-
-.footer-credits {
-  font-size: 0.8rem;
-  color: #A1887F;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 /* Print Optimization */
 @media print {
   body {
     background: white;
     color: black;
   }
-  .header-top, .hero-spiritual-banner, .form-submit-wrapper, .success-actions, .spiritual-footer, .btn {
+  .header-top, .hero-spiritual-banner, .form-submit-wrapper, .success-actions, .btn {
     display: none !important;
   }
   .spiritual-card, .summary-preview-card {
