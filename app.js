@@ -10,32 +10,13 @@ const AREA_LABELS = {
   housekeeping: "🧹 Zimmer & Housekeeping",
   garden: "🌿 Garten & Natur",
   crafts: "🔨 Handwerk & Reparaturen",
-  yoga_teaching: "🧘 Yoga unterrichten",
+  reception: "💻 Rezeption & Gästebetreuung",
   music_tech: "🎵 Musik, Kirtan & Satsang"
-};
-
-const YOGA_TEACHING_LABELS = {
-  byv_trained: "Yogalehrer-Ausbildung bei Yoga Vidya (BYV)",
-  other_trained: "Ausbildung in anderer Tradition",
-  yv_taught: "Bereits bei Yoga Vidya unterrichtet",
-  open_hours: "Offene Yogastunden / Vertretung",
-  meditation_pranayama: "Meditation & Pranayama"
 };
 
 // Initial Setup
 document.addEventListener("DOMContentLoaded", () => {
   restoreDraft();
-
-  // Setup toggle listener for Yoga Teaching details
-  const cbYogaTeaching = document.getElementById("cbYogaTeaching");
-  const detailsBox = document.getElementById("yogaTeachingDetailsBox");
-  if (cbYogaTeaching && detailsBox) {
-    const toggleDetails = () => {
-      detailsBox.style.display = cbYogaTeaching.checked ? "block" : "none";
-    };
-    cbYogaTeaching.addEventListener("change", toggleDetails);
-    toggleDetails();
-  }
   
   // Set default sample dates (1 week from now to 3 weeks from now) if empty
   const arrivalInput = document.getElementById("arrivalDate");
@@ -75,10 +56,6 @@ function restoreDraft() {
         document.querySelectorAll("input[name='workAreas']").forEach(cb => {
           cb.checked = value.includes(cb.value);
         });
-      } else if (key === "yogaTeachingOptions" && Array.isArray(value)) {
-        document.querySelectorAll("input[name='yogaTeachingOptions']").forEach(cb => {
-          cb.checked = value.includes(cb.value);
-        });
       } else if (key === "karmaModel") {
         const radio = document.querySelector(`input[name='karmaModel'][value='${value}']`);
         if (radio) radio.checked = true;
@@ -88,12 +65,6 @@ function restoreDraft() {
           el.value = value;
         }
       }
-    }
-
-    const cbYogaTeaching = document.getElementById("cbYogaTeaching");
-    const detailsBox = document.getElementById("yogaTeachingDetailsBox");
-    if (cbYogaTeaching && detailsBox) {
-      detailsBox.style.display = cbYogaTeaching.checked ? "block" : "none";
     }
   } catch (e) {
     console.warn("Could not restore draft", e);
@@ -108,9 +79,6 @@ function getFormData() {
   const workAreas = [];
   document.querySelectorAll("input[name='workAreas']:checked").forEach(cb => workAreas.push(cb.value));
 
-  const yogaTeachingOptions = [];
-  document.querySelectorAll("input[name='yogaTeachingOptions']:checked").forEach(cb => yogaTeachingOptions.push(cb.value));
-
   return {
     fullName: formData.get("fullName") || "",
     spiritualName: formData.get("spiritualName") || "",
@@ -119,9 +87,8 @@ function getFormData() {
     arrivalDate: formData.get("arrivalDate") || "",
     departureDate: formData.get("departureDate") || "",
     karmaModel: formData.get("karmaModel") || "3h",
+    yogaTeacher: formData.get("yogaTeacher") || "",
     workAreas: workAreas,
-    yogaTeachingOptions: yogaTeachingOptions,
-    yogaTeacherNotes: formData.get("yogaTeacherNotes") || "",
     qualifications: formData.get("qualifications") || "",
     yogaExperience: formData.get("yogaExperience") || "",
     motivation: formData.get("motivation") || "",
@@ -164,17 +131,6 @@ function showSuccess(data) {
   const areaNames = (data.workAreas || []).map(a => AREA_LABELS[a] || a).join(", ");
   const modelText = data.karmaModel === "6h" ? "6 Stunden täglich (100% Seva • Kost & Logis frei)" : "50% (3 Stunden täglich • Freiraum für Praxis & Seminare)";
 
-  const teachingDetailsParts = [];
-  if (data.workAreas && data.workAreas.includes("yoga_teaching")) {
-    if (data.yogaTeachingOptions && data.yogaTeachingOptions.length > 0) {
-      teachingDetailsParts.push(data.yogaTeachingOptions.map(k => YOGA_TEACHING_LABELS[k] || k).join(", "));
-    }
-    if (data.yogaTeacherNotes) {
-      teachingDetailsParts.push(`Notiz: "${data.yogaTeacherNotes}"`);
-    }
-  }
-  const teachingDetailsText = teachingDetailsParts.join(" • ");
-
   summaryBox.innerHTML = `
     <h4 style="color: var(--yv-saffron-deep); font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--yv-border); padding-bottom: 0.4rem;">
       🙏 Deine Anmeldedaten im Überblick
@@ -196,15 +152,13 @@ function showSuccess(data) {
       <span class="summary-val">${escapeHtml(data.email)} | ${escapeHtml(data.phone)}</span>
     </div>
     <div class="summary-row">
+      <span class="summary-label">Yogalehrer / Unterrichtet:</span>
+      <span class="summary-val" style="max-width: 350px; text-align: right;">${escapeHtml(data.yogaTeacher)}</span>
+    </div>
+    <div class="summary-row">
       <span class="summary-label">Gewünschte Bereiche:</span>
       <span class="summary-val">${escapeHtml(areaNames || "Keine ausgewählt")}</span>
     </div>
-    ${teachingDetailsText ? `
-      <div class="summary-row">
-        <span class="summary-label">Yoga-Unterrichten:</span>
-        <span class="summary-val" style="max-width: 350px; text-align: right; color: var(--yv-saffron-deep); font-weight: 600;">${escapeHtml(teachingDetailsText)}</span>
-      </div>
-    ` : ""}
     ${data.qualifications ? `
       <div class="summary-row">
         <span class="summary-label">Qualifikationen:</span>
@@ -236,17 +190,6 @@ function sendViaEmail() {
   const data = getFormData();
   const subject = encodeURIComponent(`Karma Yoga Anmeldung: ${data.fullName} (${data.karmaModel === "6h" ? "6 Std. 100%" : "3 Std. 50%"})`);
 
-  const teachingDetailsParts = [];
-  if (data.workAreas && data.workAreas.includes("yoga_teaching")) {
-    if (data.yogaTeachingOptions && data.yogaTeachingOptions.length > 0) {
-      teachingDetailsParts.push(data.yogaTeachingOptions.map(k => YOGA_TEACHING_LABELS[k] || k).join(", "));
-    }
-    if (data.yogaTeacherNotes) {
-      teachingDetailsParts.push(`Notiz: ${data.yogaTeacherNotes}`);
-    }
-  }
-  const teachingDetailsText = teachingDetailsParts.join(" • ");
-
   const body = encodeURIComponent(
     `Om Namo Narayanaya liebe Seminarhaus-Leitung,\n\n` +
     `ich möchte mich gerne für Karma Yoga im Seminarhaus anmelden:\n\n` +
@@ -255,8 +198,8 @@ function sendViaEmail() {
     `• Gewähltes Modell: ${data.karmaModel === "6h" ? "6 Stunden täglich (100% Seva • Kost & Logis frei)" : "50% (3 Stunden täglich • Freiraum für Praxis)"}\n` +
     `• E-Mail: ${data.email}\n` +
     `• Telefon: ${data.phone}\n` +
+    `• Yogalehrer-Ausbildung / Unterrichten: ${data.yogaTeacher}\n` +
     `• Einsatzbereiche: ${(data.workAreas || []).map(a => AREA_LABELS[a] || a).join(", ")}\n` +
-    (teachingDetailsText ? `• Yoga-Unterricht Details: ${teachingDetailsText}\n` : "") +
     (data.qualifications ? `• Besondere Fähigkeiten/Beruf: ${data.qualifications}\n` : "") +
     `• Yoga-Erfahrung: ${data.yogaExperience}\n` +
     `• Motivation: ${data.motivation}\n` +
@@ -269,8 +212,6 @@ function sendViaEmail() {
 function startNewForm() {
   const form = document.getElementById("karmaYogaForm");
   const successScreen = document.getElementById("successScreen");
-  const detailsBox = document.getElementById("yogaTeachingDetailsBox");
-  if (detailsBox) detailsBox.style.display = "none";
   form.reset();
   localStorage.removeItem(STORAGE_DRAFT_KEY);
   form.style.display = "block";
@@ -301,7 +242,7 @@ function formatDate(dateStr) {
 
 // --- WIZARD LOGIC ---
 let currentStep = 1;
-const totalSteps = 10;
+const totalSteps = 11;
 
 function updateWizardUI() {
   // Hide all steps
@@ -365,7 +306,7 @@ function validateStep(step) {
     }
   }
   
-  if (valid && step === 5) {
+  if (valid && step === 6) {
     const checkedBoxes = stepEl.querySelectorAll("input[name='workAreas']:checked");
     if (checkedBoxes.length === 0) {
       alert("Bitte wähle mindestens einen Bereich aus.");

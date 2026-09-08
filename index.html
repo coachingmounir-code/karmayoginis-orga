@@ -48,7 +48,7 @@
         <div class="progress-bar">
           <div id="progressFill" class="progress-fill"></div>
         </div>
-        <div id="progressText" class="progress-text">Frage 1 von 10</div>
+        <div id="progressText" class="progress-text">Frage 1 von 11</div>
       </div>
 
       <form id="karmaYogaForm" onsubmit="handleFormSubmit(event)">
@@ -169,8 +169,17 @@
           </div>
         </div>
 
-        <!-- Step 5: Bereiche -->
+        <!-- Step 5: Yogalehrer & Unterrichten -->
         <div class="wizard-step" id="step-5" style="display:none;">
+          <h3 class="wizard-question">Yogalehrer-Ausbildung &amp; Unterrichten</h3>
+          <div class="form-group full-width">
+            <label class="form-label" for="yogaTeacher">Hast du eine Yogalehrer-Ausbildung? Hast du bei Yoga Vidya schon mal unterrichtet? <span class="required-star">*</span></label>
+            <textarea id="yogaTeacher" name="yogaTeacher" class="form-textarea wizard-input" placeholder="z. B. Ja, 2-jährige Yogalehrer-Ausbildung bei Yoga Vidya (BYV) / Ausbildung bei einer anderen Tradition / Habe schon offene Stunden oder Vertretung bei Yoga Vidya gegeben / Nein, noch keine Ausbildung..." required></textarea>
+          </div>
+        </div>
+
+        <!-- Step 6: Bereiche -->
+        <div class="wizard-step" id="step-6" style="display:none;">
           <h3 class="wizard-question">Wo möchtest du mithelfen?</h3>
           <p class="section-desc">Wähle die Bereiche aus, die dir Freude machen. (Mehrfachauswahl möglich)</p>
           <div class="skills-grid">
@@ -235,12 +244,12 @@
               </div>
             </label>
             <label class="skill-pill-card">
-              <input type="checkbox" name="workAreas" value="yoga_teaching" id="cbYogaTeaching">
+              <input type="checkbox" name="workAreas" value="reception">
               <div class="skill-pill-inner">
-                <span class="skill-icon-emoji">🧘</span>
+                <span class="skill-icon-emoji">💻</span>
                 <div class="skill-info">
-                  <h4>Yoga unterrichten</h4>
-                  <p>Yogastunden, Meditation &amp; Pranayama</p>
+                  <h4>Rezeption &amp; Gästebetreuung</h4>
+                  <p>Check-In, Telefon</p>
                 </div>
                 <div class="skill-check-indicator" aria-hidden="true">
                   <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
@@ -265,56 +274,10 @@
               </div>
             </label>
           </div>
-
-          <!-- Zusatz-Multiple-Choice für Yoga-Unterricht (klappt auf bei Klick auf 'Yoga unterrichten') -->
-          <div id="yogaTeachingDetailsBox" class="yoga-teaching-details" style="display: none;">
-            <div class="teaching-details-card">
-              <div class="teaching-details-header">
-                <span class="teaching-icon">🕉️</span>
-                <div>
-                  <h4 class="teaching-details-title">Erfahrung &amp; Wünsche beim Yoga-Unterrichten</h4>
-                  <p class="teaching-details-subtitle">Wähle alle Punkte aus, die auf dich zutreffen (Mehrfachauswahl möglich):</p>
-                </div>
-              </div>
-              <div class="teaching-options-grid">
-                <label class="sub-choice-pill">
-                  <input type="checkbox" name="yogaTeachingOptions" value="byv_trained">
-                  <span class="sub-choice-box">✓</span>
-                  <span class="sub-choice-text">Yogalehrer-Ausbildung bei Yoga Vidya (BYV)</span>
-                </label>
-                <label class="sub-choice-pill">
-                  <input type="checkbox" name="yogaTeachingOptions" value="other_trained">
-                  <span class="sub-choice-box">✓</span>
-                  <span class="sub-choice-text">Ausbildung in einer anderen Yogatradition</span>
-                </label>
-                <label class="sub-choice-pill">
-                  <input type="checkbox" name="yogaTeachingOptions" value="yv_taught">
-                  <span class="sub-choice-box">✓</span>
-                  <span class="sub-choice-text">Bereits bei Yoga Vidya unterrichtet</span>
-                </label>
-                <label class="sub-choice-pill">
-                  <input type="checkbox" name="yogaTeachingOptions" value="open_hours">
-                  <span class="sub-choice-box">✓</span>
-                  <span class="sub-choice-text">Offene Yogastunden / Vertretung geben</span>
-                </label>
-                <label class="sub-choice-pill">
-                  <input type="checkbox" name="yogaTeachingOptions" value="meditation_pranayama">
-                  <span class="sub-choice-box">✓</span>
-                  <span class="sub-choice-text">Meditation &amp; Pranayama anleiten</span>
-                </label>
-              </div>
-              <div class="form-group" style="margin-top: 1rem; margin-bottom: 0;">
-                <label class="form-label" for="yogaTeacherNotes" style="font-size: 0.85rem;">
-                  Ergänzende Notizen zu Ausbildung oder Unterrichtsstil <span class="form-help">(optional)</span>
-                </label>
-                <input type="text" id="yogaTeacherNotes" name="yogaTeacherNotes" class="form-input wizard-input" placeholder="z. B. 400h Hatha Yoga Ausbildung, unterrichte seit 2 Jahren sanfte bis mittelstarke Stunden...">
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- Step 6: Qualifikationen -->
-        <div class="wizard-step" id="step-6" style="display:none;">
+        <!-- Step 7: Qualifikationen -->
+        <div class="wizard-step" id="step-7" style="display:none;">
           <h3 class="wizard-question">Was kannst du gut?</h3>
           <div class="form-group full-width">
             <label class="form-label" for="qualifications">Deine besonderen Qualifikationen, Berufe oder Hobbys</label>
@@ -322,8 +285,8 @@
           </div>
         </div>
 
-        <!-- Step 7: Yoga-Erfahrung -->
-        <div class="wizard-step" id="step-7" style="display:none;">
+        <!-- Step 8: Yoga-Erfahrung -->
+        <div class="wizard-step" id="step-8" style="display:none;">
           <h3 class="wizard-question">Deine Yoga-Erfahrung</h3>
           <div class="form-group full-width">
             <label class="form-label" for="yogaExperience">Welche Erfahrungen hast du bereits mit Yoga oder Yoga Vidya gemacht? <span class="required-star">*</span></label>
@@ -331,8 +294,8 @@
           </div>
         </div>
 
-        <!-- Step 8: Motivation -->
-        <div class="wizard-step" id="step-8" style="display:none;">
+        <!-- Step 9: Motivation -->
+        <div class="wizard-step" id="step-9" style="display:none;">
           <h3 class="wizard-question">Was führt dich zu uns?</h3>
           <div class="form-group full-width">
             <label class="form-label" for="motivation">Was ist deine persönliche Motivation für das Karma Yoga? <span class="required-star">*</span></label>
@@ -340,8 +303,8 @@
           </div>
         </div>
 
-        <!-- Step 9: Gesundheit -->
-        <div class="wizard-step" id="step-9" style="display:none;">
+        <!-- Step 10: Gesundheit -->
+        <div class="wizard-step" id="step-10" style="display:none;">
           <h3 class="wizard-question">Gesundheit &amp; Ernährung</h3>
           <div class="form-group full-width">
             <label class="form-label" for="healthAndDiet">Ernährung, Allergien oder körperliche Besonderheiten</label>
@@ -349,8 +312,8 @@
           </div>
         </div>
 
-        <!-- Step 10: Ashram Regeln -->
-        <div class="wizard-step" id="step-10" style="display:none;">
+        <!-- Step 11: Ashram Regeln -->
+        <div class="wizard-step" id="step-11" style="display:none;">
           <h3 class="wizard-question">Die spirituelle Ausrichtung</h3>
           <div class="ashram-rules-card" style="margin-top: 1rem;">
             <p style="font-size: 0.95rem; color: var(--yv-earth); margin-bottom: 0.75rem;">
