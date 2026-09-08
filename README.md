@@ -18,20 +18,22 @@ Eine übersichtliche, einladende und spirituell gestaltete Web-Seite im **Yoga V
 4. **Reisezeitraum:**
    - Geplanter Anreise- und Abreisezeitraum
 
-5. **Wo möchtest du mithelfen? (Multiple-Choice-Auswahl):**
-   - Schnelle, intuitive Auswahl der Lieblingsbereiche mit Häkchen: Küche & Kochen, Sattva Team (Zimmerpflege & putzen), Vishnu Team (Garten, Reparaturen, Handwerk), Musik & Satsang.
-   - Bei Auswahl von *Yoga unterrichten*: Direkte Multiple-Choice-Angaben zu Ausbildung & Unterrichtserfahrung.
+5. **Yogalehrer-Ausbildung & Unterrichten:**
+   - Eigene Ausbildung und Unterrichtserfahrung bei Yoga Vidya.
 
-6. **Was kannst du gut?**
+6. **Wo möchtest du mithelfen? (Multiple-Choice-Auswahl):**
+   - Schnelle, intuitive Auswahl der Bereiche mit Häkchen: Küche & Kochen, Sattva Team (Zimmerpflege & putzen), Vishnu Team (Garten, Reparaturen, Handwerk), Yoga unterrichten, Musik & Satsang.
+
+7. **Was kannst du gut?**
    - Kurzes Freitextfeld für Berufe, Qualifikationen oder besondere Talente.
 
-7. **Deine Yoga-Erfahrung, Ernährung & Motivation:**
+8. **Deine Yoga-Erfahrung, Ernährung & Motivation:**
    - Eigene Yoga- und Meditationspraxis / Vorerfahrung mit Yoga Vidya.
    - Persönliche Motivation für das Seva im Haus.
    - Wichtige Hinweise zu Ernährung, Allergien oder körperlichen Besonderheiten.
    - Bestätigung der spirituellen Ashram-Regeln (100% vegetarisch/vegan, rauch-, drogen- und alkoholfrei).
 
-8. **Einfaches Absenden & Bestätigung:**
+9. **Einfaches Absenden & Bestätigung:**
    - Direkte Zusammenfassung der Angaben auf dem Bildschirm.
    - 1-Klick-Weiterleitung per formatierter E-Mail an das Seminarhaus.
    - Druck- / PDF-Speicherfunktion für die eigenen Unterlagen.

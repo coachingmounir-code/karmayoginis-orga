@@ -11,6 +11,7 @@ const AREA_LABELS = {
   vishnu: "🌿 Vishnu Team (Garten, Reparaturen, Handwerk)",
   garden: "🌿 Vishnu Team (Garten, Reparaturen, Handwerk)",
   crafts: "🌿 Vishnu Team (Garten, Reparaturen, Handwerk)",
+  yoga_teaching: "🧘 Yoga unterrichten",
   music_tech: "🎵 Musik, Kirtan & Satsang"
 };
 
