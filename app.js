@@ -90,6 +90,7 @@ function getFormData() {
     workAreas: workAreas,
     qualifications: formData.get("qualifications") || "",
     yogaExperience: formData.get("yogaExperience") || "",
+    yogaTeacher: formData.get("yogaTeacher") || "",
     motivation: formData.get("motivation") || "",
     healthAndDiet: formData.get("healthAndDiet") || "",
     submittedAt: new Date().toISOString()
@@ -164,6 +165,12 @@ function showSuccess(data) {
       <span class="summary-label">Yoga-Erfahrung:</span>
       <span class="summary-val" style="max-width: 350px; text-align: right;">${escapeHtml(data.yogaExperience)}</span>
     </div>
+    ${data.yogaTeacher ? `
+      <div class="summary-row">
+        <span class="summary-label">Yogalehrer / Unterrichtet:</span>
+        <span class="summary-val" style="max-width: 350px; text-align: right;">${escapeHtml(data.yogaTeacher)}</span>
+      </div>
+    ` : ""}
     <div class="summary-row">
       <span class="summary-label">Deine Motivation:</span>
       <span class="summary-val" style="max-width: 350px; text-align: right; font-style: italic;">"${escapeHtml(data.motivation)}"</span>
@@ -195,6 +202,7 @@ function sendViaEmail() {
     `• Einsatzbereiche: ${(data.workAreas || []).map(a => AREA_LABELS[a] || a).join(", ")}\n` +
     (data.qualifications ? `• Besondere Fähigkeiten/Beruf: ${data.qualifications}\n` : "") +
     `• Yoga-Erfahrung: ${data.yogaExperience}\n` +
+    (data.yogaTeacher ? `• Yogalehrer-Ausbildung / Unterrichten: ${data.yogaTeacher}\n` : "") +
     `• Motivation: ${data.motivation}\n` +
     (data.healthAndDiet ? `• Ernährung/Gesundheit: ${data.healthAndDiet}\n` : "") +
     `\nIch freue mich sehr auf eure Rückmeldung!\n\nHerzliche Grüße & Om Shanti,\n${data.fullName}`
@@ -235,7 +243,7 @@ function formatDate(dateStr) {
 
 // --- WIZARD LOGIC ---
 let currentStep = 1;
-const totalSteps = 10;
+const totalSteps = 11;
 
 function updateWizardUI() {
   // Hide all steps

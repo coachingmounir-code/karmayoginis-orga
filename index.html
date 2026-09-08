@@ -48,7 +48,7 @@
         <div class="progress-bar">
           <div id="progressFill" class="progress-fill"></div>
         </div>
-        <div id="progressText" class="progress-text">Frage 1 von 10</div>
+        <div id="progressText" class="progress-text">Frage 1 von 11</div>
       </div>
 
       <form id="karmaYogaForm" onsubmit="handleFormSubmit(event)">
@@ -255,8 +255,17 @@
           </div>
         </div>
 
-        <!-- Step 8: Motivation -->
+        <!-- Step 8: Yogalehrer & Unterrichten -->
         <div class="wizard-step" id="step-8" style="display:none;">
+          <h3 class="wizard-question">Yogalehrer-Ausbildung &amp; Unterrichten</h3>
+          <div class="form-group full-width">
+            <label class="form-label" for="yogaTeacher">Hast du eine Yogalehrer-Ausbildung? Hast du bei Yoga Vidya schon mal unterrichtet? <span class="form-help">(optional)</span></label>
+            <textarea id="yogaTeacher" name="yogaTeacher" class="form-textarea wizard-input" placeholder="z. B. Ja, 2-jährige Yogalehrer-Ausbildung bei Yoga Vidya (BYV) / Ausbildung bei einer anderen Tradition / Habe schon offene Stunden oder Vertretung bei Yoga Vidya gegeben / Nein, noch keine Ausbildung..."></textarea>
+          </div>
+        </div>
+
+        <!-- Step 9: Motivation -->
+        <div class="wizard-step" id="step-9" style="display:none;">
           <h3 class="wizard-question">Was führt dich zu uns?</h3>
           <div class="form-group full-width">
             <label class="form-label" for="motivation">Was ist deine persönliche Motivation für das Karma Yoga? <span class="required-star">*</span></label>
@@ -264,8 +273,8 @@
           </div>
         </div>
 
-        <!-- Step 9: Gesundheit -->
-        <div class="wizard-step" id="step-9" style="display:none;">
+        <!-- Step 10: Gesundheit -->
+        <div class="wizard-step" id="step-10" style="display:none;">
           <h3 class="wizard-question">Gesundheit & Ernährung</h3>
           <div class="form-group full-width">
             <label class="form-label" for="healthAndDiet">Ernährung, Allergien oder körperliche Besonderheiten</label>
@@ -273,8 +282,8 @@
           </div>
         </div>
 
-        <!-- Step 10: Ashram Regeln -->
-        <div class="wizard-step" id="step-10" style="display:none;">
+        <!-- Step 11: Ashram Regeln -->
+        <div class="wizard-step" id="step-11" style="display:none;">
           <h3 class="wizard-question">Die spirituelle Ausrichtung</h3>
           <div class="ashram-rules-card" style="margin-top: 1rem;">
             <p style="font-size: 0.95rem; color: var(--yv-earth); margin-bottom: 0.75rem;">

@@ -21,8 +21,9 @@ Eine übersichtliche, einladende und spirituell gestaltete Web-Seite im **Yoga V
    - Schnelle Auswahl der Lieblingsbereiche (Küche & Kochen, Zimmer & Housekeeping, Garten & Natur, Handwerk & Reparaturen, Rezeption & Büro, Musik & Satsang).
    - Kurzes Freitextfeld für Berufe, Qualifikationen oder besondere Talente.
 
-5. **Deine Yoga-Erfahrung, Ernährung & Motivation:**
+5. **Deine Yoga-Erfahrung, Ausbildung, Ernährung & Motivation:**
    - Eigene Yoga- und Meditationspraxis / Vorerfahrung mit Yoga Vidya.
+   - Yogalehrer-Ausbildung & Unterrichtserfahrung bei Yoga Vidya.
    - Persönliche Motivation für das Seva im Haus.
    - Wichtige Hinweise zu Ernährung, Allergien oder körperlichen Besonderheiten.
    - Bestätigung der spirituellen Ashram-Regeln (100% vegetarisch/vegan, rauch-, drogen- und alkoholfrei).
