@@ -19,7 +19,7 @@ Eine übersichtliche, einladende und spirituell gestaltete Web-Seite im **Yoga V
    - Geplanter Anreise- und Abreisezeitraum
 
 5. **Wo möchtest du mithelfen? (Multiple-Choice-Auswahl):**
-   - Schnelle, intuitive Auswahl der Lieblingsbereiche mit Häkchen: Küche & Kochen, Sattva Team (Zimmerpflege & putzen), Garten & Natur, Handwerk & Reparaturen, Yoga unterrichten, Musik & Satsang.
+   - Schnelle, intuitive Auswahl der Lieblingsbereiche mit Häkchen: Küche & Kochen, Sattva Team (Zimmerpflege & putzen), Vishnu Team (Garten, Reparaturen, Handwerk), Musik & Satsang.
    - Bei Auswahl von *Yoga unterrichten*: Direkte Multiple-Choice-Angaben zu Ausbildung & Unterrichtserfahrung.
 
 6. **Was kannst du gut?**

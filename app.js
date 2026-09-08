@@ -8,8 +8,9 @@ const STORAGE_DRAFT_KEY = "yv_karma_yogi_simple_draft";
 const AREA_LABELS = {
   kitchen: "🥗 Küche & Kochen",
   housekeeping: "🧹 Sattva Team (Zimmerpflege & putzen)",
-  garden: "🌿 Garten & Natur",
-  crafts: "🔨 Handwerk & Reparaturen",
+  vishnu: "🌿 Vishnu Team (Garten, Reparaturen, Handwerk)",
+  garden: "🌿 Vishnu Team (Garten, Reparaturen, Handwerk)",
+  crafts: "🌿 Vishnu Team (Garten, Reparaturen, Handwerk)",
   music_tech: "🎵 Musik, Kirtan & Satsang"
 };
 
