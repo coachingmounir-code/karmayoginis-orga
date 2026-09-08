@@ -539,6 +539,17 @@ body {
   font-size: 0.82rem;
 }
 
+.membership-notice-text a {
+  color: var(--yv-saffron-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.membership-notice-text a:hover {
+  color: var(--yv-saffron);
+}
+
 .membership-actions {
   display: flex;
   gap: 0.5rem;
