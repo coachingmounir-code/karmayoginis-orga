@@ -13,22 +13,25 @@ Eine übersichtliche, einladende und spirituell gestaltete Web-Seite im **Yoga V
    - **6 Stunden täglich (100%):** Vollzeit-Seva mit freier Unterkunft, bio-veganer Vollverpflegung, Satsangs & Yogastunden.
    - **50% (3 Stunden täglich):** Teilzeit-Seva mit 50% Ermäßigung und viel Freiraum für Praxis, Seminare & Erholung.
 
-3. **Kontakt & Reisezeitraum:**
+3. **Kontakt:**
    - E-Mail & Telefon / WhatsApp
+4. **Reisezeitraum:**
    - Geplanter Anreise- und Abreisezeitraum
 
-4. **Wo möchtest du mithelfen & was bringst du mit?**
-   - Schnelle Auswahl der Lieblingsbereiche (Küche & Kochen, Zimmer & Housekeeping, Garten & Natur, Handwerk & Reparaturen, Rezeption & Büro, Musik & Satsang).
+5. **Wo möchtest du mithelfen? (Multiple-Choice-Auswahl):**
+   - Schnelle, intuitive Auswahl der Lieblingsbereiche mit Häkchen: Küche & Kochen, Zimmer & Housekeeping, Garten & Natur, Handwerk & Reparaturen, Yoga unterrichten, Musik & Satsang.
+   - Bei Auswahl von *Yoga unterrichten*: Direkte Multiple-Choice-Angaben zu Ausbildung & Unterrichtserfahrung.
+
+6. **Was kannst du gut?**
    - Kurzes Freitextfeld für Berufe, Qualifikationen oder besondere Talente.
 
-5. **Deine Yoga-Erfahrung, Ausbildung, Ernährung & Motivation:**
+7. **Deine Yoga-Erfahrung, Ernährung & Motivation:**
    - Eigene Yoga- und Meditationspraxis / Vorerfahrung mit Yoga Vidya.
-   - Yogalehrer-Ausbildung & Unterrichtserfahrung bei Yoga Vidya.
    - Persönliche Motivation für das Seva im Haus.
    - Wichtige Hinweise zu Ernährung, Allergien oder körperlichen Besonderheiten.
    - Bestätigung der spirituellen Ashram-Regeln (100% vegetarisch/vegan, rauch-, drogen- und alkoholfrei).
 
-6. **Einfaches Absenden & Bestätigung:**
+8. **Einfaches Absenden & Bestätigung:**
    - Direkte Zusammenfassung der Angaben auf dem Bildschirm.
    - 1-Klick-Weiterleitung per formatierter E-Mail an das Seminarhaus.
    - Druck- / PDF-Speicherfunktion für die eigenen Unterlagen.

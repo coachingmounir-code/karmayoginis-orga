@@ -603,11 +603,15 @@ body {
 .skill-pill-card {
   position: relative;
   cursor: pointer;
+  display: block;
+  user-select: none;
 }
 
 .skill-pill-card input {
   position: absolute;
   opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .skill-pill-inner {
@@ -624,11 +628,14 @@ body {
 .skill-pill-card:hover .skill-pill-inner {
   border-color: var(--yv-saffron);
   background: white;
+  transform: translateY(-1px);
+  box-shadow: var(--yv-shadow-sm);
 }
 
 .skill-pill-card input:checked + .skill-pill-inner {
-  border-color: var(--yv-saffron);
-  background: var(--yv-saffron-soft);
+  border-color: var(--yv-saffron-deep);
+  background: #FFF9F2;
+  box-shadow: 0 4px 14px rgba(211, 84, 0, 0.12);
 }
 
 .skill-icon-emoji {
@@ -644,15 +651,165 @@ body {
   flex-shrink: 0;
 }
 
+.skill-info {
+  flex: 1;
+  min-width: 0;
+}
+
 .skill-info h4 {
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--yv-earth);
+  line-height: 1.25;
 }
 
 .skill-info p {
   font-size: 0.76rem;
   color: var(--yv-text-muted);
+  line-height: 1.25;
+}
+
+/* Multiple-Choice Checkbox Indicator */
+.skill-check-indicator {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--yv-border);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.skill-check-indicator .check-svg {
+  width: 14px;
+  height: 14px;
+}
+
+.skill-pill-card:hover .skill-check-indicator {
+  border-color: var(--yv-saffron);
+}
+
+.skill-pill-card input:checked + .skill-pill-inner .skill-check-indicator {
+  background: var(--yv-saffron-deep);
+  border-color: var(--yv-saffron-deep);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Yoga Teaching Details Sub-Box */
+.yoga-teaching-details {
+  margin-top: 1rem;
+  animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.teaching-details-card {
+  background: #FFFDF9;
+  border: 1.5px solid #F39C12;
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 4px 16px rgba(243, 156, 18, 0.12);
+}
+
+.teaching-details-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.teaching-icon {
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.teaching-details-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--yv-saffron-deep);
+  margin-bottom: 0.15rem;
+}
+
+.teaching-details-subtitle {
+  font-size: 0.8rem;
+  color: var(--yv-earth);
+}
+
+.teaching-options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.sub-choice-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFFFF;
+  border: 1.5px solid var(--yv-border);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  color: var(--yv-earth);
+  user-select: none;
+}
+
+.sub-choice-pill input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sub-choice-box {
+  width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  border: 1.5px solid var(--yv-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: transparent;
+  background: #FFFFFF;
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+.sub-choice-pill:hover {
+  border-color: var(--yv-saffron);
+  background: #FFFDF9;
+}
+
+.sub-choice-pill input:checked + .sub-choice-box {
+  background: var(--yv-forest-green);
+  border-color: var(--yv-forest-green);
+  color: #FFFFFF;
+}
+
+.sub-choice-pill:has(input:checked) {
+  border-color: var(--yv-forest-green);
+  background: #F4FAF4;
+  color: var(--yv-forest-green);
+  font-weight: 600;
 }
 
 /* Ashram Rules */

@@ -48,7 +48,7 @@
         <div class="progress-bar">
           <div id="progressFill" class="progress-fill"></div>
         </div>
-        <div id="progressText" class="progress-text">Frage 1 von 11</div>
+        <div id="progressText" class="progress-text">Frage 1 von 10</div>
       </div>
 
       <form id="karmaYogaForm" onsubmit="handleFormSubmit(event)">
@@ -179,8 +179,13 @@
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🥗</span>
                 <div class="skill-info">
-                  <h4>Küche & Kochen</h4>
-                  <p>Schnippeln, Buffet & Abwasch</p>
+                  <h4>Küche &amp; Kochen</h4>
+                  <p>Schnippeln, Buffet &amp; Abwasch</p>
+                </div>
+                <div class="skill-check-indicator" aria-hidden="true">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                 </div>
               </div>
             </label>
@@ -189,8 +194,13 @@
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🧹</span>
                 <div class="skill-info">
-                  <h4>Zimmer & Housekeeping</h4>
+                  <h4>Zimmer &amp; Housekeeping</h4>
                   <p>Gästezimmer, Tempelpflege</p>
+                </div>
+                <div class="skill-check-indicator" aria-hidden="true">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                 </div>
               </div>
             </label>
@@ -199,8 +209,13 @@
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🌿</span>
                 <div class="skill-info">
-                  <h4>Garten & Natur</h4>
+                  <h4>Garten &amp; Natur</h4>
                   <p>Beete, Permakultur</p>
+                </div>
+                <div class="skill-check-indicator" aria-hidden="true">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                 </div>
               </div>
             </label>
@@ -209,18 +224,28 @@
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🔨</span>
                 <div class="skill-info">
-                  <h4>Handwerk & Reparaturen</h4>
+                  <h4>Handwerk &amp; Reparaturen</h4>
                   <p>Holzarbeiten, Malern</p>
+                </div>
+                <div class="skill-check-indicator" aria-hidden="true">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                 </div>
               </div>
             </label>
             <label class="skill-pill-card">
-              <input type="checkbox" name="workAreas" value="reception">
+              <input type="checkbox" name="workAreas" value="yoga_teaching" id="cbYogaTeaching">
               <div class="skill-pill-inner">
-                <span class="skill-icon-emoji">💻</span>
+                <span class="skill-icon-emoji">🧘</span>
                 <div class="skill-info">
-                  <h4>Rezeption & Gästebetreuung</h4>
-                  <p>Check-In, Telefon</p>
+                  <h4>Yoga unterrichten</h4>
+                  <p>Yogastunden, Meditation &amp; Pranayama</p>
+                </div>
+                <div class="skill-check-indicator" aria-hidden="true">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                 </div>
               </div>
             </label>
@@ -229,11 +254,62 @@
               <div class="skill-pill-inner">
                 <span class="skill-icon-emoji">🎵</span>
                 <div class="skill-info">
-                  <h4>Musik, Kirtan & Satsang</h4>
+                  <h4>Musik, Kirtan &amp; Satsang</h4>
                   <p>Harmonium, Tontechnik</p>
+                </div>
+                <div class="skill-check-indicator" aria-hidden="true">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
                 </div>
               </div>
             </label>
+          </div>
+
+          <!-- Zusatz-Multiple-Choice für Yoga-Unterricht (klappt auf bei Klick auf 'Yoga unterrichten') -->
+          <div id="yogaTeachingDetailsBox" class="yoga-teaching-details" style="display: none;">
+            <div class="teaching-details-card">
+              <div class="teaching-details-header">
+                <span class="teaching-icon">🕉️</span>
+                <div>
+                  <h4 class="teaching-details-title">Erfahrung &amp; Wünsche beim Yoga-Unterrichten</h4>
+                  <p class="teaching-details-subtitle">Wähle alle Punkte aus, die auf dich zutreffen (Mehrfachauswahl möglich):</p>
+                </div>
+              </div>
+              <div class="teaching-options-grid">
+                <label class="sub-choice-pill">
+                  <input type="checkbox" name="yogaTeachingOptions" value="byv_trained">
+                  <span class="sub-choice-box">✓</span>
+                  <span class="sub-choice-text">Yogalehrer-Ausbildung bei Yoga Vidya (BYV)</span>
+                </label>
+                <label class="sub-choice-pill">
+                  <input type="checkbox" name="yogaTeachingOptions" value="other_trained">
+                  <span class="sub-choice-box">✓</span>
+                  <span class="sub-choice-text">Ausbildung in einer anderen Yogatradition</span>
+                </label>
+                <label class="sub-choice-pill">
+                  <input type="checkbox" name="yogaTeachingOptions" value="yv_taught">
+                  <span class="sub-choice-box">✓</span>
+                  <span class="sub-choice-text">Bereits bei Yoga Vidya unterrichtet</span>
+                </label>
+                <label class="sub-choice-pill">
+                  <input type="checkbox" name="yogaTeachingOptions" value="open_hours">
+                  <span class="sub-choice-box">✓</span>
+                  <span class="sub-choice-text">Offene Yogastunden / Vertretung geben</span>
+                </label>
+                <label class="sub-choice-pill">
+                  <input type="checkbox" name="yogaTeachingOptions" value="meditation_pranayama">
+                  <span class="sub-choice-box">✓</span>
+                  <span class="sub-choice-text">Meditation &amp; Pranayama anleiten</span>
+                </label>
+              </div>
+              <div class="form-group" style="margin-top: 1rem; margin-bottom: 0;">
+                <label class="form-label" for="yogaTeacherNotes" style="font-size: 0.85rem;">
+                  Ergänzende Notizen zu Ausbildung oder Unterrichtsstil <span class="form-help">(optional)</span>
+                </label>
+                <input type="text" id="yogaTeacherNotes" name="yogaTeacherNotes" class="form-input wizard-input" placeholder="z. B. 400h Hatha Yoga Ausbildung, unterrichte seit 2 Jahren sanfte bis mittelstarke Stunden...">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -255,17 +331,8 @@
           </div>
         </div>
 
-        <!-- Step 8: Yogalehrer & Unterrichten -->
+        <!-- Step 8: Motivation -->
         <div class="wizard-step" id="step-8" style="display:none;">
-          <h3 class="wizard-question">Yogalehrer-Ausbildung &amp; Unterrichten</h3>
-          <div class="form-group full-width">
-            <label class="form-label" for="yogaTeacher">Hast du eine Yogalehrer-Ausbildung? Hast du bei Yoga Vidya schon mal unterrichtet? <span class="form-help">(optional)</span></label>
-            <textarea id="yogaTeacher" name="yogaTeacher" class="form-textarea wizard-input" placeholder="z. B. Ja, 2-jährige Yogalehrer-Ausbildung bei Yoga Vidya (BYV) / Ausbildung bei einer anderen Tradition / Habe schon offene Stunden oder Vertretung bei Yoga Vidya gegeben / Nein, noch keine Ausbildung..."></textarea>
-          </div>
-        </div>
-
-        <!-- Step 9: Motivation -->
-        <div class="wizard-step" id="step-9" style="display:none;">
           <h3 class="wizard-question">Was führt dich zu uns?</h3>
           <div class="form-group full-width">
             <label class="form-label" for="motivation">Was ist deine persönliche Motivation für das Karma Yoga? <span class="required-star">*</span></label>
@@ -273,17 +340,17 @@
           </div>
         </div>
 
-        <!-- Step 10: Gesundheit -->
-        <div class="wizard-step" id="step-10" style="display:none;">
-          <h3 class="wizard-question">Gesundheit & Ernährung</h3>
+        <!-- Step 9: Gesundheit -->
+        <div class="wizard-step" id="step-9" style="display:none;">
+          <h3 class="wizard-question">Gesundheit &amp; Ernährung</h3>
           <div class="form-group full-width">
             <label class="form-label" for="healthAndDiet">Ernährung, Allergien oder körperliche Besonderheiten</label>
             <input type="text" id="healthAndDiet" name="healthAndDiet" class="form-input wizard-input" placeholder="z. B. Glutenunverträglichkeit, Rückenbeschwerden (kein schweres Heben)...">
           </div>
         </div>
 
-        <!-- Step 11: Ashram Regeln -->
-        <div class="wizard-step" id="step-11" style="display:none;">
+        <!-- Step 10: Ashram Regeln -->
+        <div class="wizard-step" id="step-10" style="display:none;">
           <h3 class="wizard-question">Die spirituelle Ausrichtung</h3>
           <div class="ashram-rules-card" style="margin-top: 1rem;">
             <p style="font-size: 0.95rem; color: var(--yv-earth); margin-bottom: 0.75rem;">
@@ -299,7 +366,7 @@
             </div>
             <div class="ashram-rule-item">
               <span class="rule-number">✓</span>
-              <div><strong>Achtsamkeit & Nachtruhe:</strong> Respektvolles Miteinander im Seva-Geist.</div>
+              <div><strong>Achtsamkeit &amp; Nachtruhe:</strong> Respektvolles Miteinander im Seva-Geist.</div>
             </div>
           </div>
           <label class="custom-checkbox-row" style="margin-top: 1.5rem;">
