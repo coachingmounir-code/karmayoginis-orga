@@ -22,7 +22,7 @@ Eine übersichtliche, einladende und spirituell gestaltete Web-Seite im **Yoga V
    - Eigene Ausbildung und Unterrichtserfahrung bei Yoga Vidya.
 
 6. **Wo möchtest du mithelfen? (Multiple-Choice-Auswahl):**
-   - Schnelle, intuitive Auswahl der Bereiche mit Häkchen: Küche & Kochen, Sattva Team (Zimmerpflege & putzen), Vishnu Team (Garten, Reparaturen, Handwerk), Yoga unterrichten, Musik & Satsang.
+   - Schnelle, intuitive Auswahl der Bereiche mit Häkchen: Parvati Küchenteam (Schnippeln, Buffet & Abwasch), Sattva Team (Zimmerpflege & putzen), Vishnu Team (Garten, Reparaturen, Handwerk), Yoga unterrichten, Musik & Satsang.
 
 7. **Was kannst du gut?**
    - Kurzes Freitextfeld für Berufe, Qualifikationen oder besondere Talente.
